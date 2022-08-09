@@ -38,6 +38,6 @@ for (let index = 0; index < card_pop; index++) {
    container.append(card);
    let flip = card.querySelector('.flip-card-inner');
    flip.addEventListener("click", flipCard);
-   background.style.backgroundImage = "url('/images/" + imageArray[idx] + ".png')";
+   background.style.backgroundImage = "url('images/" + imageArray[idx] + ".png')";
    imageArray.splice(idx,1);
 }
