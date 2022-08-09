@@ -1,13 +1,13 @@
 body {
     font-family: 'Mouse Memoirs', sans-serif;
     background-color: #efefef;
-    font-size: 48px;
 }
 
 h1 { 
     margin: auto;
     text-align: center;
     margin-top: 30px;
+    font-size: 5em !important;
 }
 
 main .flip-card {
@@ -42,11 +42,11 @@ main .flip-card {
     }
   
     main .flip-card-front {
-        background-image: url(https://m.media-amazon.com/images/M/MV5BMzMwYjc1N2MtY2U2Ny00MTc3LTk1YWQtYzE3NmM5NWQ2YzkyXkEyXkFqcGdeQXVyMzAzODY0NzE@._V1_.jpg);
+        background-color: #ffffff;
         color: black;
         border-radius: 15px;
         background-image: url(https://m.media-amazon.com/images/M/MV5BMzMwYjc1N2MtY2U2Ny00MTc3LTk1YWQtYzE3NmM5NWQ2YzkyXkEyXkFqcGdeQXVyMzAzODY0NzE@._V1_.jpg);
-        background-repeat: none;
+        background-repeat: no-repeat;
         background-size: cover;
     }
     main .flip-card-back {
@@ -55,6 +55,7 @@ main .flip-card {
         transform: rotateY(180deg);
         border-radius: 15px;
         background-image: url(https://www.kindpng.com/picc/m/11-118606_meu-malvado-favorito-minions-jerry-png-minion-banana.png);
-        background-repeat: none;
+        background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
     }
