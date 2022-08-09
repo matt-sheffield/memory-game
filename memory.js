@@ -32,7 +32,7 @@ function flipCard(){
 for (let index = 0; index < card_pop; index++) {
    let card = document.createElement("div");
    let idx = Math.floor(Math.random() * imageArray.length);
-   card.className = "col-xs-6 col-sm-6 col-md-3";
+   card.className = "col-3";
    card.innerHTML = html;
    let background = card.querySelector('.flip-card-back');
    container.append(card);
@@ -41,3 +41,4 @@ for (let index = 0; index < card_pop; index++) {
    background.style.backgroundImage = "url('images/" + imageArray[idx] + ".png')";
    imageArray.splice(idx,1);
 }
+
