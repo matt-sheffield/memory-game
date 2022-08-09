@@ -29,7 +29,7 @@ main .flip-card {
         border-radius: 15px;
     }
   
-    main .flip-card:hover .flip-card-inner {
+    main .flipCard {
         transform: rotateY(180deg);
     }
   
