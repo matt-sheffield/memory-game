@@ -15,7 +15,7 @@ for (let index = 0; index < 20; index++) {
     card.innerHTML = html;
     let background = document.querySelector('.flip-card-back');
     background.style.backgroundImage = "url('./images/"+imageArray[idx] + ".png')";
-    card.classList = "col-sm-3";
+    card.className= "col-sm-3";
     container.append(card);
 }
 
