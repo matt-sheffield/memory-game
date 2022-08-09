@@ -54,8 +54,17 @@ main .flip-card {
         color: white;
         transform: rotateY(180deg);
         border-radius: 15px;
-        /* background-image: url(https://www.kindpng.com/picc/m/11-118606_meu-malvado-favorito-minions-jerry-png-minion-banana.png); */
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+    }
+
+    main button {
+        font-size: 32px;
+        display: flex;
+        margin: auto;
+        border-radius: 10px;
+        padding: 10px 30px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     }
