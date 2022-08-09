@@ -17,10 +17,7 @@ let html = `<div class="flip-card"> <div class="flip-card-inner"> <div class="fl
 //Populating image array with images folder names
 let imageArray = ["ironManLogo","batManLogo","captainAmericaLogo","deadPoolLogo","flashLogo","greenLanternLogo","scottLogo","spiderManLogo","superManLogo","wonderWomanLogo"];
 
-/*
- For loop that populates web page with cards using imageArray and randomly generates
- a number to select the index of the array for a photo. 
-*/
+
 
 function flipCard(){
     this.classList.toggle("flipCard");
@@ -30,7 +27,10 @@ function flipCard(){
         },1000)
     }
 }
-
+/*
+ For loop that populates web page with cards using imageArray and randomly generates
+ a number to select the index of the array for a photo. 
+*/
 for (let index = 0; index < 12; index++) {
    let card = document.createElement("div");
    let idx = Math.floor(Math.random() * imageArray.length);
@@ -44,8 +44,3 @@ for (let index = 0; index < 12; index++) {
    arrayRemove(imageArray,imageArray[idx]);
 }
 
-//Initialize first card to flip on click
-// cards = 
-// cards.addEventListener("click", flipCard);
-
-//Function for toggling flip card class from memory.css
