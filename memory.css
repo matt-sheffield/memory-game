@@ -71,7 +71,6 @@ main .flip-card {
 
     @media (max-width: 575px) {
         main .flip-card {
-            width: 100%;
             height: 100px;
         }
 
@@ -92,6 +91,18 @@ main .flip-card {
         .game-container {
             padding-left: 10px;
             padding-right: 10px;
+        }
+    }
+
+    @media (min-width: 350px) and (max-width: 575px) {
+        main .flip-card {
+            height: 120px;
+        }
+    }
+
+    @media (min-width: 420px) and (max-width: 575px) {
+        main .flip-card {
+            height: 170px;
         }
     }
 
