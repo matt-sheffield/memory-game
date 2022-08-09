@@ -21,6 +21,16 @@ let imageArray = ["ironManLogo","batManLogo","captainAmericaLogo","deadPoolLogo"
  For loop that populates web page with cards using imageArray and randomly generates
  a number to select the index of the array for a photo. 
 */
+
+function flipCard(){
+    this.classList.toggle("flipCard");
+    if(true){ // function to check if it's a match
+        setTimeout(()=>{
+            this.classList.toggle("flipCard");
+        },1000)
+    }
+}
+
 for (let index = 0; index < 12; index++) {
    let card = document.createElement("div");
    let idx = Math.floor(Math.random() * imageArray.length);
@@ -28,15 +38,14 @@ for (let index = 0; index < 12; index++) {
    card.innerHTML = html;
    let background = card.querySelector('.flip-card-back');
    container.append(card);
+   let flip = card.querySelector('.flip-card-inner');
+   flip.addEventListener("click", flipCard);
    background.style.backgroundImage = "url('/images/" + imageArray[idx] + ".png')";
    arrayRemove(imageArray,imageArray[idx]);
 }
 
 //Initialize first card to flip on click
-firstCard = document.querySelector('.flip-card-inner');
-firstCard.addEventListener("click", flipCard);
+// cards = 
+// cards.addEventListener("click", flipCard);
 
 //Function for toggling flip card class from memory.css
-function flipCard(){
-    firstCard.classList.toggle("flipCard");
-}
