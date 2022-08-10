@@ -2,8 +2,8 @@
 let cardFlipped = false;
 let lockBoard = false;
 let firstCard, secondCard;
-let difficulty = 1;
-let card_pop = 0;
+let diffculty = "Medium"
+let card_pop = 0
 
 
 
@@ -34,13 +34,36 @@ imageArray = imageArray.flatMap(i => [i,i]);
 imageArray = imageArray.splice(0,card_pop)
 
 
+function getindex(len){
+    return Math.floor(Math.random() * len);
+}
+
 function flipCard(){
+    let currentbackgroundimage = this.querySelector('.flip-card-back').style.backgroundImage;
+    //console.log(background.style.backgroundImage);
     this.classList.toggle("flipCard");
     cardFlipped = true;
     // Add audio to card flip
     let audio = new Audio("Card-flip-sound-effect.wav");
     audio.play();
+    if(firstflip){
+        let firstflipbackground = firstflip.querySelector('.flip-card-back').style.backgroundImage;
+        if(firstflipbackground === currentbackgroundimage){
+            console.log("match");
+        }
+        else{
+            setTimeout(()=>{
+                this.classList.toggle("flipCard");
+                firstflip.classList.toggle("flipCard");
+                firstflip = null;
+            },1000)
+            
+        }
     }
+    else{
+        firstflip = this
+    }
+}
 
 
 /*
@@ -49,7 +72,7 @@ function flipCard(){
 */
 for (let index = 0; index < card_pop; index++) {
    let card = document.createElement("div");
-   let idx = Math.floor(Math.random() * imageArray.length);
+   let idx = getindex(imageArray.length);
    card.className = "col-3";
    card.innerHTML = html;
    let background = card.querySelector('.flip-card-back');
