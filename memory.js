@@ -53,6 +53,8 @@ function flipCard(){
         let firstflipbackground = firstflip.querySelector('.flip-card-back').style.backgroundImage;
         if(firstflipbackground === currentbackgroundimage){
             matchCount++;
+            let matchDisplayCount = document.getElementById("count");
+            matchDisplayCount.innerText = matchCount;
             let win = new Audio("banana.mp3");
             win.play();
             if(matchCount >= card_pop /2){
