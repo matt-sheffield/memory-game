@@ -7,6 +7,7 @@ let matchCount = 0;
 let card_pop = 10;
 let firstflip = null;
 let imageArray;
+let wrongAnswers = 0;
 //Function that changes 
 
 //Initializing game container to container 
@@ -49,6 +50,7 @@ function flipCard(){
     // Add audio to card flip
     let audio = new Audio("Card-flip-sound-effect.wav");
     audio.play();
+    if(firstflip === this)return;
     if(firstflip){
         let firstflipbackground = firstflip.querySelector('.flip-card-back').style.backgroundImage;
         if(firstflipbackground === currentbackgroundimage){
@@ -68,6 +70,10 @@ function flipCard(){
                 this.classList.toggle("flipCard");
                 x.classList.toggle("flipCard");
             },1000)
+            wrongAnswers++;
+            if(wrongAnswers >= card_pop/2){
+                
+            }
         }
         firstflip = null;
     }
