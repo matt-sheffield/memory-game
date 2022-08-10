@@ -48,13 +48,13 @@ function flipCard(){
             console.log("match");
         }
         else{
+            let x = firstflip
             setTimeout(()=>{
                 this.classList.toggle("flipCard");
-                firstflip.classList.toggle("flipCard");
-                firstflip = null;
+                x.classList.toggle("flipCard");
             },1000)
-            
         }
+        firstflip = null;
     }
     else{
         firstflip = this
