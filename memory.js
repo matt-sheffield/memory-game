@@ -8,6 +8,7 @@ let card_pop = 10;
 let firstflip = null;
 let imageArray;
 let wrongAnswers = 0;
+let columnSize = "col-3";
 //Function that changes 
 
 //Initializing game container to container 
@@ -30,6 +31,7 @@ function difficultyChange(num){
             document.getElementById("easyButton").className = "";
             document.getElementById("mediumButton").className = "selected";
             document.getElementById("hardButton").className = "";
+            // columnSize = "col-2"; - This is how we can make the tiles smaller and fit more on the page, you'd have to update the "main .flip-card" height to make it look better 
             break
         case 2:
             card_pop = 20;
@@ -115,7 +117,7 @@ function createpage(card_pop){
     for (let index = 0; index < card_pop; index++) {
         let card = document.createElement("div");
         let idx = getindex(imageArray.length);
-        card.className = "col-3";
+        card.className = columnSize;
         card.innerHTML = html;
         let background = card.querySelector('.flip-card-back');
         container.append(card);
