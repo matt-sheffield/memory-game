@@ -45,18 +45,25 @@ function flipCard(){
     let currentbackgroundimage = this.querySelector('.flip-card-back').style.backgroundImage;
     //console.log(background.style.backgroundImage);
     this.classList.toggle("flipCard");
-    cardFlipped = true;
+
     // Add audio to card flip
     let audio = new Audio("Card-flip-sound-effect.wav");
     audio.play();
-    if(firstflip){
-        let firstflipbackground = firstflip.querySelector('.flip-card-back').style.backgroundImage;
-        if(firstflipbackground === currentbackgroundimage){
-            matchCount++;
-            let matchDisplayCount = document.getElementById("count");
-            matchDisplayCount.innerText = matchCount;
-            let win = new Audio("banana.mp3");
-            win.play();
+
+    //Conditional for changing flip-card front to flip-card back
+        if(firstflip){
+                let firstflipbackground = firstflip.querySelector('.flip-card-back').style.backgroundImage;
+                //Compares backgrounds for both cards to determine match
+                if(firstflipbackground === currentbackgroundimage){
+                matchCount++;
+                //Displays match count to player
+                let matchDisplayCount = document.getElementById("count");
+                matchDisplayCount.innerText = matchCount;
+
+                //Plays banana sound when match is made
+                let win = new Audio("banana.mp3");
+                win.play();
+            // Changes button from Reset Game to Play Again
             if(matchCount >= card_pop /2){
                 let reloadButton = document.getElementById('reload');
                 reloadButton.innerText = "Play Again";
@@ -64,9 +71,9 @@ function flipCard(){
         }
         else{
             let x = firstflip
-            setTimeout(()=>{
-                this.classList.toggle("flipCard");
-                x.classList.toggle("flipCard");
+                setTimeout(()=>{
+                    this.classList.toggle("flipCard");
+                    x.classList.toggle("flipCard");
             },1000)
         }
         firstflip = null;
