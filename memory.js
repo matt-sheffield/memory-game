@@ -53,8 +53,6 @@ function lives(num){
     lives.innerHTML = "";
     for (let index = 0; index < num; index++) {
         var banana = document.createElement('img');
-        banana.width = "50";
-        banana.height = "50";
         banana.src = './images/lives.png';
         lives.appendChild(banana);
     }
