@@ -3,11 +3,31 @@ body {
     background-color: #efefef;
 }
 
-h1 { 
+header h1 { 
     margin: auto;
     text-align: center;
     margin-top: 30px;
+    margin-bottom: 30px;
     font-size: 5em !important;
+}
+
+header h2 {
+    text-align: right;
+}
+
+header .row {
+    align-items: center;
+}
+
+header button {
+    margin: auto -3px;
+    font-size: 24px;
+    padding: 10px 15px;
+}
+
+header button.selected {
+    background-color: #2980b9;
+    color: #ffffff;
 }
 
 main .flip-card {

@@ -20,12 +20,21 @@ function difficultyChange(num){
     switch (num) {
         case 0:
             card_pop = 8;
+            document.getElementById("easyButton").className = "selected";
+            document.getElementById("mediumButton").className = "";
+            document.getElementById("hardButton").className = "";
             break;
         case 1:
             card_pop = 16;
+            document.getElementById("easyButton").className = "";
+            document.getElementById("mediumButton").className = "selected";
+            document.getElementById("hardButton").className = "";
             break
         case 2:
-            card_pop = 20
+            card_pop = 20;
+            document.getElementById("easyButton").className = "";
+            document.getElementById("mediumButton").className = "";
+            document.getElementById("hardButton").className = "selected";
         default:
             break;
     }
