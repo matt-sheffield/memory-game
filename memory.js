@@ -14,21 +14,21 @@ let imageArray = ["ironManLogo","batManLogo","captainAmericaLogo","deadPoolLogo"
 
 imageArray = imageArray.flatMap(i => [i,i]);
 imageArray = imageArray.splice(0,card_pop)
+
+
+function flipCard(){
+    this.classList.toggle("flipCard");
+    cardFlipped = true;
+    // Add audio to card flip
+    let audio = new Audio("Card-flip-sound-effect.wav");
+    audio.play();
+    }
+
+
 /*
  For loop that populates web page with cards using imageArray and randomly generates
  a number to select the index of the array for a photo. 
 */
-
-function flipCard(){
-    this.classList.toggle("flipCard");
-    if(true){ // function to check if it's a match
-        setTimeout(()=>{
-            //this.classList.toggle("flipCard");
-        },1000)
-    }
-}
-
-
 for (let index = 0; index < card_pop; index++) {
    let card = document.createElement("div");
    let idx = Math.floor(Math.random() * imageArray.length);
