@@ -4,11 +4,19 @@ let lockBoard = false;
 let firstCard, secondCard;
 let difficulty = "Medium"
 let matchCount = 0;
+let card_pop = 10;
+let firstflip = null;
 let imageArray;
-
 //Function that changes 
+
+//Initializing game container to container 
+let container = document.querySelector('.game-container');
+//Establishing design of card using html file
+let html = `<div class="flip-card"> <div class="flip-card-inner"> <div class="flip-card-front" style="background-image: url(https://m.media-amazon.com/images/M/MV5BMzMwYjc1N2MtY2U2Ny00MTc3LTk1YWQtYzE3NmM5NWQ2YzkyXkEyXkFqcGdeQXVyMzAzODY0NzE@._V1_.jpg); background-repeat: no-repeat; background-size: cover;"></div><div class="flip-card-back" style="background-repeat: no-repeat; background-size: cover;"> <h1></h1> </div></div></div>`;
+//Populating image array with images folder names
+
+
 function difficultyChange(num){
-    let card_pop = 2;
     switch (num) {
         case 0:
             card_pop = 8;
@@ -23,15 +31,9 @@ function difficultyChange(num){
     }
     imageArray = ["ironManLogo","batManLogo","captainAmericaLogo","deadPoolLogo","flashLogo","greenLanternLogo","scottLogo","spiderManLogo","superManLogo","wonderWomanLogo"];
     imageArray = imageArray.flatMap(i => [i,i]);
-    imageArray = imageArray.splice(0,card_pop)
+    imageArray = imageArray.splice(0,card_pop);
     createpage(card_pop);
 }
-
-//Initializing game container to container 
-let container = document.querySelector('.game-container');
-//Establishing design of card using html file
-let html = `<div class="flip-card"> <div class="flip-card-inner"> <div class="flip-card-front" style="background-image: url(https://m.media-amazon.com/images/M/MV5BMzMwYjc1N2MtY2U2Ny00MTc3LTk1YWQtYzE3NmM5NWQ2YzkyXkEyXkFqcGdeQXVyMzAzODY0NzE@._V1_.jpg); background-repeat: no-repeat; background-size: cover;"></div><div class="flip-card-back" style="background-repeat: no-repeat; background-size: cover;"> <h1></h1> </div></div></div>`;
-//Populating image array with images folder names
 
 
 
@@ -63,7 +65,6 @@ function flipCard(){
                 x.classList.toggle("flipCard");
             },1000)
         }
-        firstflip = null;
         firstflip = null;
     }
     else{
