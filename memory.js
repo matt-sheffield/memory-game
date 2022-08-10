@@ -2,8 +2,21 @@
 let cardFlipped = false;
 let lockBoard = false;
 let firstCard, secondCard;
-let val  = 12 // entered by user has to be even
-let card_pop = Math.min(20,val);
+let diffculty = "Medium"
+let card_pop = 0
+
+switch (diffculty) {
+    case "Easy":
+        card_pop = 8;
+        break;
+    case "Medium":
+        card_pop = 16;
+        break
+    case "Hard":
+        card_pop = 20
+    default:
+        break;
+}
 
 //Initializing game container to container 
 let container = document.querySelector('.game-container');
