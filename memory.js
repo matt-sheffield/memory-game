@@ -2,20 +2,25 @@
 let cardFlipped = false;
 let lockBoard = false;
 let firstCard, secondCard;
-let diffculty = "Medium"
-let card_pop = 0
+let difficulty = 1;
+let card_pop = 0;
 
-switch (diffculty) {
-    case "Easy":
-        card_pop = 8;
-        break;
-    case "Medium":
-        card_pop = 16;
-        break
-    case "Hard":
-        card_pop = 20
-    default:
-        break;
+
+
+//Function that changes 
+function difficultyChange(num){
+    switch (difficulty) {
+        case "0":
+            card_pop = 8;
+            break;
+        case "1":
+            card_pop = 16;
+            break
+        case "2":
+            card_pop = 20
+        default:
+            break;
+    } 
 }
 
 //Initializing game container to container 
