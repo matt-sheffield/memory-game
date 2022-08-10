@@ -2,14 +2,14 @@
 let cardFlipped = false;
 let lockBoard = false;
 let firstCard, secondCard;
-let diffculty = "Medium"
-let card_pop = 0
-
+let difficulty = "Medium"
+let card_pop = 16;
+let matchCount = 0;
 
 
 //Function that changes 
 function difficultyChange(num){
-    switch (difficulty) {
+    switch (num) {
         case "0":
             card_pop = 8;
             break;
@@ -50,15 +50,21 @@ function flipCard(){
         let firstflipbackground = firstflip.querySelector('.flip-card-back').style.backgroundImage;
         if(firstflipbackground === currentbackgroundimage){
             console.log("match");
+            matchCount++;
+            if(matchCount >= card_pop /2){
+                let reloadButton = document.getElementById('reload');
+                reloadButton.innerText = "Play Again";
+            }
         }
         else{
             setTimeout(()=>{
                 this.classList.toggle("flipCard");
                 firstflip.classList.toggle("flipCard");
-                firstflip = null;
+                
             },1000)
             
         }
+        firstflip = null;
     }
     else{
         firstflip = this
