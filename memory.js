@@ -42,10 +42,21 @@ function difficultyChange(num){
     imageArray = ["ironManLogo","batManLogo","captainAmericaLogo","deadPoolLogo","flashLogo","greenLanternLogo","scottLogo","spiderManLogo","superManLogo","wonderWomanLogo"];
     imageArray = imageArray.flatMap(i => [i,i]);
     imageArray = imageArray.splice(0,card_pop);
+    lives(card_pop/2)
     createpage(card_pop);
 }
 
-
+function lives(num){
+    let lives = document.querySelector('#lives');
+    lives.innerHTML = "";
+    for (let index = 0; index < num; index++) {
+        var banana = document.createElement('img');
+        banana.width = "50";
+        banana.height = "50";
+        banana.src = './images/lives.png';
+        lives.appendChild(banana);
+    }
+}
 
 function getindex(len){
     return Math.floor(Math.random() * len);
@@ -80,8 +91,10 @@ function flipCard(){
                 x.classList.toggle("flipCard");
             },1000)
             wrongAnswers++;
+            lives(card_pop/2 - wrongAnswers);
             if(wrongAnswers >= card_pop/2){
-                
+                alert("Better luck next time");
+                setTimeout(()=> location.reload(),1000);
             }
         }
         firstflip = null;
